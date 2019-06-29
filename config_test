@@ -1,0 +1,25 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1EWXlPVEF5TVRRek5Gb1hEVEk1TURZeU5qQXlNVFF6TkZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTlgyCmdBcVBENVVIaDR0VjJ0ZWdRYUJER2RORVhjbzBpZGNWUUI2L3FBUHdyMjc1MjcvcFNVbW9LYUh1UGlTb0paVC8KR1dITGhIQnVIV1lWZ1AxZ2RQZktnQjJKWHpCVkwrWHRJUFBteXZ4bkhRWWJybXBwcTBiTW41QlZNQUF4cmJySwo1ZUdaWk5FT2NkeXJLREZCQTRZMmFNWWlvUDRBcnhMYStxNWtScVVHWlJiU1FUbVo5TEZBVnZFazJkUWZ6SDVYCjQ1aHZQRkVEdVZqNGkrZ2ljTWMxYTdDMjBPTzRIMFZyZEFkSmpZZDJuQ1VwNjc4N0ZUbzVTV0t3VFJFbWhPR0oKY3hoUUNnaGQ0Y3NWWkhGNGpSMG40VzBURWkwRjJ3azhncUxITXNPOGxveHhvTVZxWlFlSHF0aG80QUJqWmFNMQpUQ1o4QlhuWWVKVzYzRHFQekgwQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFBeG1JSTdTL3hyakhhYXVLNDY2SHdBVVZTV1oKTHRrWlJGVnpKKzBRYkhyMUUvdFZaOW5KOGl6b2pxd2dsZGgyLy9rc1liTWVLcC9ybGgrRSthMWxscXFRbjhuWgpLUk40WVA3bEhkamM4NGxOWTF4TjJ5Z1BlNy8wam9nWm5Dd0VxZ3lHekp3bXFDQ2lTNlRGS2RCa3ZnOGlQR2FsCnNOK01Zc2dNMzdRSU1jSWNJdUpVK1RiVHJweERiV2Jza0pjODg2djJ0NVhWTDNQb1Jwcmp1ZGxvYlFINkcrMVYKNkVuS0htVG4xbU9mMHVDM3NEcStCaVR6aHVDVzJ2R0JmU2lzTVg0UTJyaFFKLzR0WjlIRGUwaFRFelJRSkV0NApKZkUramZ6Z1U5eHFOOW11bDE3OGVvWmI0aFVZNEhsRjJGR2ZIOVVEUEk0YjNIS2FTZXo4aktlRzJVTT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://74515F523998A3B00C7D6239816D55F6.sk1.ap-southeast-1.eks.amazonaws.com
+  name: test.ap-southeast-1.eksctl.io
+contexts:
+- context:
+    cluster: test.ap-southeast-1.eksctl.io
+    user: aws-user1@test.ap-southeast-1.eksctl.io
+  name: aws-user1@test.ap-southeast-1.eksctl.io
+current-context: aws-user1@prod.ap-southeast-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: aws-user1@test.ap-southeast-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - token
+      - -i
+      - test
+      command: aws-iam-authenticator
+      env: null
